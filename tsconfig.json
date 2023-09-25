@@ -6,12 +6,12 @@
       "@components/*": [
         "src/components/*"
       ],
-      "@sections/*": [
-        "src/sections/*"
+      "@data/*": [
+        "src/data/*"
       ],
       "@layouts/*": [
         "src/layouts/*"
-      ]
+      ],
     }
   }
 }

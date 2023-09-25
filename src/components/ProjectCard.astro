@@ -10,7 +10,7 @@ type Props = {
 const {image, name, description, sourceUrl, demoUrl}: Props = Astro.props
 ---
 
-<article class="relative rounded-2xl group">
+<article class="relative rounded-2xl group h-full grid grid-rows-[auto,1fr]">
     <div class="absolute inset-0 -z-10">
         <div class="bg-gradient-to-br from-brand to-accent absolute inset-2 blur-lg opacity-20 group-hover:opacity-100 transition-all"/>
         <div class="bg-gradient-to-br from-brand/40 to-accent/40 absolute inset-0 rounded-2xl"/>
@@ -22,12 +22,12 @@ const {image, name, description, sourceUrl, demoUrl}: Props = Astro.props
                  class="aspect-video w-full rounded-[0.875rem] border border-theme-900 group-hover:scale-125 transition-all duration-700"/>
         </figure>
     </div>
-    <section class="p-6 grid gap-y-2">
+    <section class="p-6 grid gap-y-2 h-full grid-rows-[auto,auto,1fr] overflow-hidden">
         <header>
             <h1 class="text-theme-200 font-bold">{name}</h1>
         </header>
         <p class="text-theme-400">{description}</p>
-        <div class="text-brand flex justify-between">
+        <div class="text-brand flex justify-between self-end">
             <a class:list={[
                 "leading-[2rem] font-medium hover:text-brand/80 active:text-brand/60",
                 {"pointer-events-none text-brand/40": !sourceUrl}
