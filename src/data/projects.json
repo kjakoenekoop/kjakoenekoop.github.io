@@ -5,9 +5,15 @@
       "name": "My Portfolio",
       "description": "A responsive showcase of my skills and experiences, built with modern web technologies. It's not just a portfolio, it's my virtual fingerprint in the tech realm.",
       "sourceUrl": "https://github.com/kjakoenekoop/portfolio.git"
+    },
+    "2": {
+      "image": "https://as1.ftcdn.net/v2/jpg/03/53/83/92/1000_F_353839266_8yqhN0548cGxrl4VOxngsiJzDgrDHxjG.jpg",
+      "name": "More Projects Coming Soon",
+      "description": "I'm actively working on my portfolio atm. More projects will come after"
     }
   },
   "featured": [
-    "1"
+    "1",
+    "2"
   ]
 }

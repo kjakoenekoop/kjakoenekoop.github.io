@@ -1,6 +1,5 @@
 ---
 const {pathname} = Astro.url
-// TODO: Create logo
 ---
 <div class="fixed top-0 inset-x-0 bg-theme-950/80 h-16 border-b border-brand/20 backdrop-blur z-30">
     <nav class="flex justify-between items-center h-full px-4 max-w-6xl mx-auto">
@@ -38,7 +37,7 @@ const {pathname} = Astro.url
                 <a href="/" class:list={["text-lg p-5 inline-block", {"text-theme-200": pathname === '/'}]}>Home</a>
             </li>
             <li>
-                <a href="/about" class:list={["text-lg p-5 inline-block", {"text-theme-200": pathname === '/_about'}]}>About</a>
+                <a href="/about" class:list={["text-lg p-5 inline-block", {"text-theme-200": pathname === '/about'}]}>About</a>
             </li>
             <li>
                 <a href="/projects"
@@ -55,7 +54,7 @@ const {pathname} = Astro.url
                 <a href="/" class:list={["inline-block px-3 py-2", {"text-theme-200": pathname === '/'}]}>Home</a>
             </li>
             <li>
-                <a href="/about" class:list={["inline-block px-3 py-2", {"text-theme-200": pathname === '/_about'}]}>About</a>
+                <a href="/about" class:list={["inline-block px-3 py-2", {"text-theme-200": pathname === '/about'}]}>About</a>
             </li>
             <li>
                 <a href="/projects"

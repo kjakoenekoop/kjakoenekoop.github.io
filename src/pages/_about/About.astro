@@ -1,31 +1,38 @@
 ---
-import Link from "../../components/Link.astro";
----
+import Guides from "@components/Guides.astro";
 
-<section caption="About Me" title="Behind the Code" id="about">
-    <p class="px-4">
-        Hello and welcome to my portfolio! As a certified developer in Java, JavaScript, UML, and software testing, my
-        journey in the tech world has been self-driven and incredibly rewarding. With over four years of personal
-        experience, I specialize in crafting web, app, and software solutions that are clean, scalable, and
-        maintainable. My approach is industry-agnostic, designed to solve complex problems across various sectors.
-        Intrigued? Dive deeper into my biography to explore my passion for innovative thinking and
-        solution-oriented programming.
-    </p>
-    <div>
-        <div class="aspect-video w-full bg-neutral-700 rounded-2xl">Image</div>
+// TODO: Rewrite text
+---
+<section class="relative grid sm:grid-cols-2 gap-y-8 px-4 max-w-6xl mx-auto pb-40">
+    <header class="grid gap-y-6 px-4 sm:col-span-2">
+        <h2 class="text-brand font-bold tracking-wide">My Journey</h2>
+        <h1 class="text-theme-200 font-bold text-3xl tracking-tight">Behind the Code</h1>
+    </header>
+    <div class="text-theme-400 sm:col-start-1 px-4 sm:pr-16 grid gap-y-8">
+        <!--  About - Growing up NL etc.  -->
+        <p>
+            Growing up in the Netherlands, I was surrounded by the simple joys of everyday life and the country's rich
+            history. My early curiosity about how things worked led me into a role as a technician, setting the stage
+            for a fascination with creative problem-solving and thinking outside the box.
+        </p>
+        <p>
+            Life took a fascinating turn when I moved to Thailand. Experiencing a different work culture was an
+            eye-opener, and my role as a tour coordinator added a new dimension to my professional journey. This period
+            wasn't just about work – Thailand was a canvas of breathtaking landscapes, vibrant cities, and intriguing
+            histories, and I immersed myself in travel, understanding the beauty and diversity of our world.
+        </p>
+        <p>
+            Yet, it was during this journey that I discovered another passion – the world of tech. The desire to make
+            things better, combined with my innate problem-solving skills, led me to coding. Now, as I blend my global
+            experiences and technical prowess, I'm on the lookout for challenges that push the boundaries, both in tech
+            and life.
+        </p>
     </div>
-    <p class="px-4">
-        My passion for technology ignited during my time at a travel agency, where an outsourced team's shortcomings
-        led me to dive into web, app, and software development. Specializing in TypeScript and front-end frameworks like
-        Astro and Next.js, I'm also keen to broaden my skills with Rust and Python.
-    </p>
-    <p class="px-4">
-        In my work, I prioritize clean, maintainable code, often breaking complex components into smaller pieces for
-        better efficiency. As I look ahead, my goals are to secure a job and expand my expertise. When not coding, I
-        enjoy traveling—exploring new cultures and beautiful landscapes that offer a break from the
-        digital world.
-    </p>
-    <div class="px-4">
-        <Link outlined>View my CV</Link>
-    </div>
+
+    <figure class="sm:row-span-2 sm:col-start-2 sm:row-start-2">
+        <img src="/suan_phueng.jpg" alt="koen koenekoop"
+             class="aspect-square object-cover w-full rounded-2xl"/>
+    </figure>
+
+    <Guides start={true}/>
 </section>

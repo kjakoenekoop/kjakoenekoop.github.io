@@ -1,21 +1,27 @@
 ---
 import data from './skills.json'
-import Link from "../../../components/Link.astro";
+import {default as Link, Variant} from "@components/Link.astro";
+import Guides from "@components/Guides.astro";
 const skills: Record<string, string[]> = data
 ---
-<section caption="My Toolkit" title="Skills & Competencies" id="skills">
-    <p class="text-neutral-400 px-4">
+
+<section class="relative grid gap-y-8 px-4 max-w-6xl mx-auto pb-40">
+    <header class="grid gap-y-6 px-4">
+        <h2 class="text-brand font-bold tracking-wide">My Toolkit</h2>
+        <h1 class="text-theme-200 font-bold text-3xl tracking-tight">Skills & Competencies</h1>
+    </header>
+    <p class="text-neutral-400 px-4 max-w-prose">
         Over the years, I've acquired a robust set of skills that allow me to deliver end-to-end solutions. From
         front-end frameworks to back-end languages, my toolbox is both comprehensive and ever-evolving.
     </p>
     <div>
-        <ul class="columns-2 space-y-8">
+        <ul class="columns-2 sm:columns-3 space-y-8">
             {Object.entries(skills).map(([category, skills]) => (
                     <li class="px-4 break-inside-avoid">
-                        <h3>{category}</h3>
+                        <h3 class="text-theme-200 font-medium">{category}</h3>
                         <ul class="mt-2">
                             {skills.map(skill => (
-                                    <li class="py-1">{skill}</li>
+                                    <li class="py-1 text-theme-400">{skill}</li>
                             ))}
                         </ul>
                     </li>
@@ -23,6 +29,7 @@ const skills: Record<string, string[]> = data
         </ul>
     </div>
     <div class="px-4">
-        <Link href="#projects" outlined>See my skills in action</Link>
+        <Link href="/projects" variant={Variant.secondary}>See my skills in action</Link>
     </div>
+    <Guides />
 </section>

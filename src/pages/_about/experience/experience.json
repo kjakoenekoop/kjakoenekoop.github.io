@@ -1,5 +1,9 @@
 {
   "Photographic Associate": {
+    "date": {
+      "from": "Dec 2021",
+      "to": "Sep 2023"
+    },
     "responsibilities": "Managed photographic equipment and assisted in capturing images. Responsible for post-processing and digital editing.",
     "skills": [
       "Attention to Detail",
@@ -7,7 +11,11 @@
       "Time Management"
     ]
   },
-  "Pharmaceutical Logistics Specialist": {
+  "Pharmaceutical Delivery Driver": {
+    "date": {
+      "from": "Sep 2020",
+      "to": "Oct 2021"
+    },
     "responsibilities": "Orchestrated daily delivery routes and managed pharmaceutical stock replenishments. Ensured healthcare-compliant storage and documentation.",
     "skills": [
       "Supply Chain Management",
@@ -16,6 +24,10 @@
     ]
   },
   "Tour Coordinator": {
+    "date": {
+      "from": "Apr 2018",
+      "to": "Jun 2020"
+    },
     "responsibilities": "Crafted bespoke tour itineraries and coordinated with local agents. Managed customer relations and real-time crises like missed flights.",
     "skills": [
       "Crisis Management",
@@ -23,7 +35,11 @@
       "Sales & Negotiation"
     ]
   },
-  "HVAC and Environmental Systems Specialist": {
+  "Integrated Mechanical Systems Technician": {
+    "date": {
+      "from": "Sep 2012",
+      "to": "Aug 2017"
+    },
     "responsibilities": "Installed and maintained diverse mechanical systems. Conducted preventive maintenance checks and advised customers.",
     "skills": [
       "Technical Problem-Solving",
