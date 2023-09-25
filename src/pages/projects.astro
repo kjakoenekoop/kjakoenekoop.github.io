@@ -1,9 +1,28 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import {all} from '@data/projects.json'
+import ProjectCard from "@components/ProjectCard.astro";
+import Guides from "@components/Guides.astro";
 ---
 
 <Layout title="KJA Koenekoop | Projects">
-    <main>
-        <h1>Contact</h1>
+    <main class="mt-40">
+        <section class="relative mx-auto max-w-6xl">
+        <ul class=" grid gap-6 sm:grid-cols-2 lg:grid-cols-3 px-4">
+            {Object.values(all).map(({image, name, description, sourceUrl, demoUrl}) => (
+                    <li>
+                        <ProjectCard
+                                image={image}
+                                name={name}
+                                description={description}
+                                sourceUrl={sourceUrl}
+                                demoUrl={demoUrl}
+
+                        />
+                    </li>
+            ))}
+        </ul>
+        <Guides start={true} end={true}/>
+        </section>
     </main>
 </Layout>
