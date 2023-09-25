@@ -1,0 +1,28 @@
+---
+import data from './skills.json'
+import Link from "../../../components/Link.astro";
+const skills: Record<string, string[]> = data
+---
+<section caption="My Toolkit" title="Skills & Competencies" id="skills">
+    <p class="text-neutral-400 px-4">
+        Over the years, I've acquired a robust set of skills that allow me to deliver end-to-end solutions. From
+        front-end frameworks to back-end languages, my toolbox is both comprehensive and ever-evolving.
+    </p>
+    <div>
+        <ul class="columns-2 space-y-8">
+            {Object.entries(skills).map(([category, skills]) => (
+                    <li class="px-4 break-inside-avoid">
+                        <h3>{category}</h3>
+                        <ul class="mt-2">
+                            {skills.map(skill => (
+                                    <li class="py-1">{skill}</li>
+                            ))}
+                        </ul>
+                    </li>
+            ))}
+        </ul>
+    </div>
+    <div class="px-4">
+        <Link href="#projects" outlined>See my skills in action</Link>
+    </div>
+</section>

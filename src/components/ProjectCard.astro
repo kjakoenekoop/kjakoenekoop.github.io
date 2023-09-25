@@ -1,0 +1,41 @@
+---
+type Props = {
+    image: string
+    name: string
+    description: string
+    sourceUrl: string
+    demoUrl?: string
+}
+
+const {image, name, description, sourceUrl, demoUrl}: Props = Astro.props
+---
+
+<article class="relative rounded-2xl group">
+    <div class="absolute inset-0 -z-10">
+        <div class="bg-gradient-to-br from-brand to-accent absolute inset-2 blur-lg opacity-20 group-hover:opacity-100 transition-all"/>
+        <div class="bg-gradient-to-br from-brand/40 to-accent/40 absolute inset-0 rounded-2xl"/>
+        <div class="bg-theme-900 absolute inset-[1px] rounded-[calc(1rem-1px)]"/>
+    </div>
+    <div class="px-1 pt-1">
+        <figure class="aspect-video rounded-[0.875rem] overflow-hidden">
+            <img src={image} alt={name}
+                 class="aspect-video w-full rounded-[0.875rem] border border-theme-900 group-hover:scale-125 transition-all duration-700"/>
+        </figure>
+    </div>
+    <section class="p-6 grid gap-y-2">
+        <header>
+            <h1 class="text-theme-200 font-bold">{name}</h1>
+        </header>
+        <p class="text-theme-400">{description}</p>
+        <div class="text-brand flex justify-between">
+            <a class:list={[
+                "leading-[2rem] font-medium hover:text-brand/80 active:text-brand/60",
+                {"pointer-events-none text-brand/40": !sourceUrl}
+            ]} href={sourceUrl}>Source code ›</a>
+            <a class:list={[
+                "leading-[2rem] font-medium hover:text-brand/80 active:text-brand/60",
+                {"pointer-events-none text-brand/40": !demoUrl}
+            ]} href={demoUrl}>Live Demo ›</a>
+        </div>
+    </section>
+</article>

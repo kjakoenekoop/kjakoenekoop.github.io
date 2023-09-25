@@ -1,0 +1,29 @@
+---
+import {default as Link, Variant} from "@components/Link.astro";
+---
+
+<section class="relative py-16 overflow-hidden grid max-w-6xl mx-auto sm:grid-cols-2">
+    <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-center -z-10">
+        <div class="relative animate-rotate bg-gradient-to-b from-red-500 via-red-500/10 to-transparent rounded-full w-80 md:w-96 aspect-square opacity-40 flex items-center justify-center">
+            <div class="absolute inset-0 rounded-full bg-gradient-to-b from-red-500 via-red-500/30 to-transparent blur-3xl -z-10"/>
+            <div class="bg-theme-950 w-56 md:w-72 aspect-square rounded-full"/>
+        </div>
+    </div>
+    <div class="py-24 px-4 grid gap-y-8 h-fit">
+        <header class="grid gap-y-4 px-4">
+            <h1 class="text-theme-200 text-5xl sm:text-7xl font-extrabold leading-none">Koen Koenekoop</h1>
+            <h2 class="text-theme-400 text-lg font-medium">Full-Stack Developer & Software Enthusiast</h2>
+        </header>
+        <p class="px-4 md:pr-8 text-theme-400">I craft scalable, maintainable applications with a beyond-9-to-5
+            commitment to excellence.</p>
+        <div class="px-4 flex gap-4 flex-wrap">
+            <Link href="/contact" variant={Variant.solid}>Get in touch</Link>
+            <Link href="/projects" variant={Variant.outlined}>Explore my work</Link>
+        </div>
+    </div>
+    <figure class="aspect-square brightness-90 self-end mb-20 hidden pl-16 sm:block relative -z-50">
+        <img src="/chiang_dao-23_no-bg.png" alt="Koen Koenekoop - Chiang Dao" class="h-full w-full object-cover"/>
+        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-theme-950 to-transparent h-24"/>
+    </figure>
+</section>
+

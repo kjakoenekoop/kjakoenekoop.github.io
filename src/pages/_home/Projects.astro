@@ -1,0 +1,39 @@
+---
+import ProjectCard from "@components/ProjectCard.astro";
+import {default as Link, Variant} from "@components/Link.astro";
+import Guides from "@components/Guides.astro";
+---
+<section class="relative grid gap-y-8 px-4 max-w-6xl mx-auto pb-40">
+    <header class="grid gap-y-6 px-4">
+        <h2 class="text-brand font-bold tracking-wide">Code in Action</h2>
+        <h1 class="text-theme-200 font-bold text-3xl tracking-tight">Featured Projects</h1>
+    </header>
+    <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <li>
+            <ProjectCard
+                    image="/portfolio-screenshot.png"
+                    name="My Portfolio"
+                    description="A responsive showcase of my skills and experiences, built with modern web technologies. It's not just a portfolio, it's my virtual fingerprint in the tech realm."
+                    sourceUrl="/"
+            />
+        </li>
+        <li>
+            <ProjectCard
+                    image="/"
+                    name="My Portfolio"
+                    description="A responsive showcase of my skills and experiences, built with modern web technologies. It's not just a portfolio, it's my virtual fingerprint in the tech realm."
+            />
+        </li>
+        <li>
+            <ProjectCard
+                    image="/"
+                    name="My Portfolio"
+                    description="A responsive showcase of my skills and experiences, built with modern web technologies. It's not just a portfolio, it's my virtual fingerprint in the tech realm."
+            />
+        </li>
+    </ul>
+    <div class="px-4">
+        <Link href="/projects" variant={Variant.secondary}>Explore all projects</Link>
+    </div>
+    <Guides end={true}/>
+</section>

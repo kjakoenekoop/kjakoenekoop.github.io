@@ -1,0 +1,9 @@
+{
+  "all": [{
+    "image": "/porfolio-screenshot.png",
+    "name": "My Portfolio",
+    "description":"A responsive showcase of my skills and experiences, built with modern web technologies. It's not just a portfolio, it's my virtual fingerprint in the tech realm.",
+    "sourceUrl": ""
+  }],
+  "featured": ["1"]
+}

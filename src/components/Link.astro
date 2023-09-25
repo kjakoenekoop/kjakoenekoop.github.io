@@ -1,0 +1,21 @@
+---
+export enum Variant {'solid', 'outlined', 'secondary'}
+
+type Props = {
+    href: string
+    variant: Variant
+}
+
+const {href, variant}: Props = Astro.props
+---
+
+<a href={href}
+   class:list={[
+       "font-medium rounded-full px-3 py-2 w-fit opacity-100 hover:opacity-80 active:opacity-60 transition-opacity",
+       {"bg-brand": variant === Variant.solid},
+       {"border border-brand text-brand": variant === Variant.outlined},
+       {"text-theme-950 bg-theme-200": variant === Variant.secondary}
+   ]}>
+    <slot/>
+    ›
+</a>

@@ -1,0 +1,34 @@
+{
+  "Photographic Associate": {
+    "responsibilities": "Managed photographic equipment and assisted in capturing images. Responsible for post-processing and digital editing.",
+    "skills": [
+      "Attention to Detail",
+      "Photography and Editing",
+      "Time Management"
+    ]
+  },
+  "Pharmaceutical Logistics Specialist": {
+    "responsibilities": "Orchestrated daily delivery routes and managed pharmaceutical stock replenishments. Ensured healthcare-compliant storage and documentation.",
+    "skills": [
+      "Supply Chain Management",
+      "Regulatory Compliance",
+      "Documentation"
+    ]
+  },
+  "Tour Coordinator": {
+    "responsibilities": "Crafted bespoke tour itineraries and coordinated with local agents. Managed customer relations and real-time crises like missed flights.",
+    "skills": [
+      "Crisis Management",
+      "Customer Relationship Management",
+      "Sales & Negotiation"
+    ]
+  },
+  "HVAC and Environmental Systems Specialist": {
+    "responsibilities": "Installed and maintained diverse mechanical systems. Conducted preventive maintenance checks and advised customers.",
+    "skills": [
+      "Technical Problem-Solving",
+      "Quality Assurance",
+      "Customer Consultation"
+    ]
+  }
+}

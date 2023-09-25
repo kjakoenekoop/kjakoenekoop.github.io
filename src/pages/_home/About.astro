@@ -1,0 +1,22 @@
+---
+import {default as Link, Variant} from "@components/Link.astro";
+import Guides from "@components/Guides.astro";
+---
+<section class="relative grid gap-y-8 px-8 max-w-6xl mx-auto sm:grid-cols-2 pb-40">
+    <header class="grid gap-y-6 sm:col-span-2">
+        <h2 class="text-brand font-bold tracking-wide">Behind the Syntax</h2>
+        <h1 class="text-theme-200 font-bold text-3xl tracking-tight">A Quick Intro</h1>
+    </header>
+    <p class="text-theme-400 sm:pr-8">
+        Hello! I'm Koen. After immersing myself in the vibrant culture and bustling streets of Bangkok for two
+        years, I've made my way back to the Netherlands, where familiar landscapes meet fresh perspectives.
+    </p>
+    <p class="text-theme-400 sm:pl-4 sm:pr-16 lg:pr-28">
+        Throughout my journey, I've accumulated a diverse range of work experiences and constantly expanded my tech
+        toolkit. Curious about my professional escapades? Dive in and discover more!
+    </p>
+
+    <Link href="/about" variant={Variant.secondary}>Get to know more</Link>
+
+    <Guides start={true}/>
+</section>

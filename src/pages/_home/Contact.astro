@@ -1,0 +1,21 @@
+---
+import {default as Link, Variant} from "@components/Link.astro";
+---
+
+<section class="relative mx-auto px-4 max-w-6xl py-16 text-center grid gap-y-8 justify-center">
+    <div class="absolute inset-4 bg-gradient-to-br from-theme-700 to-theme-900 rounded-2xl -z-10 border border-brand/20"/>
+
+    <header class="grid gap-y-6 px-6">
+        <h2 class="font-bold tracking-wide text-theme-100">Let’s Collaborate</h2>
+        <h1 class="font-bold text-3xl tracking-tight text-brand">Connect, Converse, Create</h1>
+    </header>
+
+    <p class="max-w-prose text-theme-300 px-6 text-lg">
+        Eager to share insights, forge partnerships, or simply talk tech?
+        <a class="text-blue-400">Connect on LinkedIn</a> or drop me a <a class="text-blue-400">WhatsApp message</a>. Together, we can shape the future of
+        technology.
+    </p>
+    <div>
+        <Link href="/contact" variant={Variant.secondary}>Get in touch</Link>
+    </div>
+</section>

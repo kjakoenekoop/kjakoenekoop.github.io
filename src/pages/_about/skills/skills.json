@@ -1,0 +1,8 @@
+{
+  "Programming Languages": ["JavaScript","TypeScript","PHP","Java"],
+  "Markup & Styling": ["HTML", "SCSS", "TailwindCSS", "styled-components"],
+  "Web Frameworks": ["React", "Next.js", "Vue.js", "Nuxt", "Astro", "Angular"],
+  "Back-End Technologies": ["PostgreSQL", "MySQL", "MongoDB", "Express.js"],
+  "Dev Environment & Tools": ["WebStorm", "IntelliJ", "Git", "Docker", "PNPM", "Node.js"],
+  "Design & UI/UX": ["Figma", "Adobe XD", "Adobe Photoshop", "Adobe Lightroom"]
+}
