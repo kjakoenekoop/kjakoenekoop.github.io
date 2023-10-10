@@ -1,0 +1,74 @@
+---
+type FormData = {
+    name: string
+    email: string
+    message: string
+}
+---
+<>
+    <div class="text-green-400 border border-green-800 bg-theme-800 py-2 px-3 rounded-md mb-6 hidden" id="success-message">Thank you, <span class="font-medium">%name%</span>! Your message has been successfully sent. We'll get back to you shortly.</div>
+    <div class="text-red-400 border border-red-800 bg-theme-800 py-2 px-3 rounded-md mb-6 hidden" id="error-message">Oops! There was an issue submitting your message. Please try again or contact us directly at <a class="underline underline-offset-4" href="mailto:k.j.a.koenekoop@gmail.com">k.j.a.koenekoop@gmail.com</a></div>
+
+    <form id="contact-form" class="grid gap-y-6 text-theme-400">
+        <div class="grid gap-y-2.5">
+            <label for="name" class="text-theme-200 w-full">Name:</label>
+            <input type="text" id="name" name="name" required
+                   class="bg-theme-800 rounded-md py-2 px-3.5 border border-theme-700"/>
+        </div>
+        <div class="grid gap-y-2.5">
+            <label for="email" class="text-theme-200 w-full">Email:</label>
+            <input type="text" id="email" name="email" required
+                   class="bg-theme-800 rounded-md py-2 px-3.5 border border-theme-700"/>
+        </div>
+        <div class="grid gap-y-2.5">
+            <label for="message" class="text-theme-200">Message:</label>
+            <textarea id="message" name="message" required rows="5"
+                      class="bg-theme-800 rounded-md py-2 px-3.5 border border-theme-700"/>
+        </div>
+        <div class="flex justify-end mt-2">
+            <button type="submit" class="py-2 px-3 text-brand">Send Message</button>
+        </div>
+    </form>
+</>
+<script>
+    const contactForm = document.getElementById('contact-form') as HTMLFormElement
+    const url = "https://api.staticforms.xyz/submit"
+    const successMessage = document.getElementById('success-message')
+    const errorMessage = document.getElementById('error-message')
+
+    const formToObject = (form: HTMLFormElement): FormData => {
+        const object = {}
+        const formData = new FormData(form)
+        formData.forEach((v, k) => object[k] = v)
+        return object as FormData
+    }
+
+    const handleSubmit = async (event: SubmitEvent) => {
+        event.preventDefault()
+
+        const data = formToObject(contactForm)
+
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                ...data,
+                accessKey: "d8fcef79-c3a5-490a-a637-1f23340d49db",
+                honeypot: ""
+            }),
+        })
+
+        if ((await response.json()).success) {
+            successMessage.innerText = successMessage.innerText.replace('%name%', data['name'])
+            errorMessage.classList.add('hidden')
+            successMessage.classList.remove('hidden')
+            contactForm.reset()
+        } else {
+            successMessage.classList.add('hidden')
+            errorMessage.classList.remove('hidden')
+        }
+    }
+
+    contactForm.addEventListener('submit', handleSubmit)
+</script>
+
