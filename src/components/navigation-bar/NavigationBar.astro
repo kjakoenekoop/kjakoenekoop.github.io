@@ -34,18 +34,18 @@ const {pathname} = Astro.url
         <ul class="sm:hidden text-theme-400 pointer-events-none transition-opacity opacity-0 divide-y divide-theme-800 font-bold px-4 absolute top-20 inset-x-4 border border-theme-800 rounded-2xl py-6 backdrop-blur bg-theme-950/80 text-large z-50"
             id="navigation-menu">
             <li>
-                <a href="/" class:list={["text-lg p-5 inline-block", {"text-theme-200": pathname === '/'}]}>Home</a>
+                <a href="/" class:list={["text-lg p-5 block", {"text-theme-200": pathname === '/'}]}>Home</a>
             </li>
             <li>
-                <a href="/about" class:list={["text-lg p-5 inline-block", {"text-theme-200": pathname === '/about'}]}>About</a>
+                <a href="/about" class:list={["text-lg p-5 block", {"text-theme-200": pathname === '/about'}]}>About</a>
             </li>
             <li>
                 <a href="/projects"
-                   class:list={["text-lg p-5 inline-block", {"text-theme-200": pathname === '/projects'}]}>Projects</a>
+                   class:list={["text-lg p-5 block", {"text-theme-200": pathname === '/projects'}]}>Projects</a>
             </li>
             <li>
                 <a href="/contact"
-                   class:list={["text-lg p-5 inline-block", {"text-theme-200": pathname === '/contact'}]}>Contact</a>
+                   class:list={["text-lg p-5 block", {"text-theme-200": pathname === '/contact'}]}>Contact</a>
             </li>
         </ul>
 
