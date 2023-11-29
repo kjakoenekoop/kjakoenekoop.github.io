@@ -6,8 +6,14 @@ type FormData = {
 }
 ---
 <>
-    <div class="text-green-400 border border-green-800 bg-theme-800 py-2 px-3 rounded-md mb-6 hidden" id="success-message">Thank you, <span class="font-medium">%name%</span>! Your message has been successfully sent. We'll get back to you shortly.</div>
-    <div class="text-red-400 border border-red-800 bg-theme-800 py-2 px-3 rounded-md mb-6 hidden" id="error-message">Oops! There was an issue submitting your message. Please try again or contact us directly at <a class="underline underline-offset-4" href="mailto:k.j.a.koenekoop@gmail.com">k.j.a.koenekoop@gmail.com</a></div>
+    <div class="text-green-400 border border-green-800 bg-theme-800 py-2 px-3 rounded-md mb-6 hidden"
+         id="success-message">Thank you, <span class="font-medium">%name%</span>! Your message has been successfully
+        sent. We'll get back to you shortly.
+    </div>
+    <div class="text-red-400 border border-red-800 bg-theme-800 py-2 px-3 rounded-md mb-6 hidden" id="error-message">
+        Oops! There was an issue submitting your message. Please try again or contact us directly at <a
+            class="underline underline-offset-4" href="mailto:k.j.a.koenekoop@gmail.com">k.j.a.koenekoop@gmail.com</a>
+    </div>
 
     <form id="contact-form" class="grid gap-y-6 text-theme-400">
         <div class="grid gap-y-2.5">
@@ -31,10 +37,10 @@ type FormData = {
     </form>
 </>
 <script>
-    const contactForm = document.getElementById('contact-form') as HTMLFormElement
     const url = "https://api.staticforms.xyz/submit"
-    const successMessage = document.getElementById('success-message')
-    const errorMessage = document.getElementById('error-message')
+    let contactForm = document.getElementById('contact-form') as HTMLFormElement
+    let successMessage = document.getElementById('success-message')
+    let errorMessage = document.getElementById('error-message')
 
     const formToObject = (form: HTMLFormElement): FormData => {
         const object = {}
@@ -69,6 +75,11 @@ type FormData = {
         }
     }
 
-    contactForm.addEventListener('submit', handleSubmit)
+    document.addEventListener('astro:page-load', () => {
+        contactForm = document.getElementById('contact-form') as HTMLFormElement
+        successMessage = document.getElementById('success-message')
+        errorMessage = document.getElementById('error-message')
+        contactForm?.addEventListener('submit', handleSubmit)
+    })
 </script>
 

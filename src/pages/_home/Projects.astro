@@ -2,11 +2,9 @@
 import ProjectCard from "@components/ProjectCard.astro";
 import {default as Link, Variant} from "@components/Link.astro";
 import Guides from "@components/Guides.astro";
+import {featured, projects} from '@data/projects.json'
 
-import {featured, all} from '@data/projects.json'
-
-const featuredProjects = []
-featured.forEach(id => featuredProjects.push(all[id]))
+const featuredProjects = featured.map(id => projects[id])
 ---
 <section class="relative grid gap-y-8 px-4 max-w-6xl mx-auto pb-40">
     <header class="grid gap-y-6 px-4">

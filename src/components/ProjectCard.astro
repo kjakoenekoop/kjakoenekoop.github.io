@@ -17,7 +17,7 @@ const {image, name, description, sourceUrl, demoUrl}: Props = Astro.props
         <div class="bg-theme-900 absolute inset-[1px] rounded-[calc(1rem-1px)]"/>
     </div>
     <div class="px-1 pt-1">
-        <figure class="aspect-video rounded-[0.875rem] overflow-hidden">
+        <figure class="aspect-video rounded-[0.875rem] overflow-hidden border border-theme-300/10">
             <img src={image} alt={name}
                  class="aspect-video w-full rounded-[0.875rem] border border-theme-900 group-hover:scale-125 transition-all duration-700"/>
         </figure>
@@ -31,11 +31,11 @@ const {image, name, description, sourceUrl, demoUrl}: Props = Astro.props
             <a class:list={[
                 "leading-[2rem] font-medium hover:text-brand/80 active:text-brand/60",
                 {"pointer-events-none text-brand/40": !sourceUrl}
-            ]} href={sourceUrl}>Source code ›</a>
+            ]} href={sourceUrl} target="_blank" rel="noopener noreferrer">Source code ›</a>
             <a class:list={[
                 "leading-[2rem] font-medium hover:text-brand/80 active:text-brand/60",
                 {"pointer-events-none text-brand/40": !demoUrl}
-            ]} href={demoUrl}>Live Demo ›</a>
+            ]} href={demoUrl} target="_blank" rel="noopener noreferrer">Live Demo ›</a>
         </div>
     </section>
 </article>

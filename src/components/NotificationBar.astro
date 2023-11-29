@@ -1,20 +1,27 @@
 ---
 const {notification}: { notification: string } = Astro.props
 ---
-
-<div id="notification-bar" class="bg-brand py-1 text-center font-medium hidden top-16 inset-x-0 z-40">
-    {notification}
+{notification &&
+<div id="notification-bar" transition:persist
+     class="bg-brand py-1 text-center font-medium hidden top-16 inset-x-0 z-40 px-10">{notification}
     <div class="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer text-black">X</div>
 </div>
+    }
 
 <script>
+    const notificationBar: { value: null | HTMLDivElement } = {value: null}
+
+    const handleClose = () => {
+        notificationBar.value.classList.replace('fixed', 'hidden')
+        sessionStorage.setItem('notification-bar:is-closed', 'true')
+    }
+
     const handleMount = () => {
-        const notificationBar = document.getElementById('notification-bar')
-        const isClosed = sessionStorage.getItem('notification-bar:is-closed')
-        if (!isClosed) notificationBar.classList.replace('hidden', 'fixed')
-        notificationBar.addEventListener('click', () => {
-            sessionStorage.setItem('notification-bar:is-closed', 'true')
-        })
+        notificationBar.value = document.getElementById('notification-bar') as HTMLDivElement
+        const isClosed = Boolean(sessionStorage.getItem('notification-bar:is-closed'))
+        if (isClosed) return
+        notificationBar.value.classList.replace('hidden', 'fixed')
+        notificationBar.value.addEventListener('click', handleClose)
     }
 
     document.addEventListener('astro:page-load', handleMount)

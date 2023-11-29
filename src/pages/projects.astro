@@ -1,6 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import {all} from '@data/projects.json'
+import {projects} from '@data/projects.json'
 import ProjectCard from "@components/ProjectCard.astro";
 import Guides from "@components/Guides.astro";
 ---
@@ -9,7 +9,7 @@ import Guides from "@components/Guides.astro";
     <main class="mt-40">
         <section class="relative mx-auto max-w-6xl">
         <ul class=" grid gap-6 sm:grid-cols-2 lg:grid-cols-3 px-4">
-            {Object.values(all).map(({image, name, description, sourceUrl, demoUrl}) => (
+            {Object.values(projects).map(({image, name, description, sourceUrl, demoUrl}) => (
                     <li>
                         <ProjectCard
                                 image={image}
