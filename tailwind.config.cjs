@@ -14,7 +14,7 @@ module.exports = {
 				'gradient-conic': 'conic-gradient(from 180deg,var(--tw-gradient-stops))'
 			},
 			colors: {
-				theme: colors.zinc,
+				theme: colors.slate,
 				brand: colors.emerald["400"],
 				accent: colors.yellow['400']
 			},

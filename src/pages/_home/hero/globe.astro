@@ -1,0 +1,57 @@
+---
+
+---
+
+<div class="absolute inset-0 border border-red-500" id="canvas-container"/>
+
+<script>
+    import Globe from "globe.gl";
+    import {MeshPhongMaterial} from "three";
+
+
+    let countries;
+    const getCountries = async () => {
+        if (!countries) {
+            const response = await fetch('/globe.geojson')
+            countries = await response.json()
+        }
+        return countries
+    }
+
+    const material = new MeshPhongMaterial({
+        color: '#0f172a',
+    })
+
+    const renderGlobe = ({features}) => {
+        const container = document.getElementById('canvas-container')
+        const render = Globe()
+            .backgroundColor('rgba(0,0,0,0)')
+            .showGraticules(true)
+            .atmosphereColor('#34d399')
+            .atmosphereAltitude(0.2)
+            .globeMaterial(material)
+            .hexPolygonAltitude(0.05)
+            .hexPolygonsData(features)
+            .hexPolygonResolution(3)
+            .hexPolygonMargin(0.5)
+            .hexPolygonColor(() => '#334155')
+            (container)
+
+        const controls = render.controls()
+        controls.minPolarAngle = Math.PI / 3.5
+        controls.maxPolarAngle = Math.PI / 1.75
+
+        const renderer = render.renderer()
+        renderer.setSize(container.getBoundingClientRect().width, container.getBoundingClientRect().height, false)
+        renderer.setPixelRatio(container.getBoundingClientRect().width / container.getBoundingClientRect().height)
+
+    }
+
+    document.addEventListener('astro:page-load', async() => {
+        if (location.pathname !== '/') return
+        const countries = await getCountries()
+        renderGlobe(countries)
+    })
+
+
+</script>
